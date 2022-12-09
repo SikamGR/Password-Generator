@@ -198,3 +198,15 @@ button {
     color: #55F991;
 
 }
+
+footer {
+    text-align: center;
+    margin-top: 90%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 4px;
+    font-weight: 500;
+    font-family: 'Karla';
+    background-color: #10B981;
+    border-radius: 5px;
+}
