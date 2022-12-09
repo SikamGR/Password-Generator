@@ -8,33 +8,26 @@ let lenghtPassword = 15
 let passwordOneEl = document.getElementById("password-one")
 let passwordTwoEl = document.getElementById("password-two")
 let generateButton = document.getElementById("generate-password")
-let generatedPasswordOne = []
-let generatedPasswordTwo = []
 let passwordOne
 let passwordTwo
-let simplifyPassword 
+
 
 generateButton.addEventListener("click", function() {
+    let generatedPasswordOne = ""
+    let generatedPasswordTwo = ""
+
     for ( i = 0; i < lenghtPassword; i++ ) {
         passwordOne = Math.floor(Math.random() * characters.length)
-        generatedPasswordOne.push(characters[passwordOne])       
+        generatedPasswordOne += characters[passwordOne]      
     }
+    passwordOneEl.textContent = generatedPasswordOne
+
+/* ----------------- Generates 2nd password ------------------------- */
 
     for ( i = 0; i < lenghtPassword; i++ ) {
         passwordTwo = Math.floor(Math.random() * characters.length)
-        generatedPasswordTwo.push(characters[passwordTwo])       
+        generatedPasswordTwo += characters[passwordTwo]      
     }
-
-    for ( i = 0; i < generatedPasswordOne.length; i++ ){
-        simplifyPassword = generatedPasswordOne[i]
-        console.log(simplifyPassword)
-        passwordOneEl.textContent += simplifyPassword
-    }
-
-    for ( i = 0; i < generatedPasswordTwo.length; i++ ){
-        simplifyPassword = generatedPasswordTwo[i]
-        console.log(simplifyPassword)
-        passwordTwoEl.textContent += simplifyPassword
-    }
+    passwordTwoEl.textContent = generatedPasswordTwo
 
 })
